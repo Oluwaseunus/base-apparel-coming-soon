@@ -10,13 +10,22 @@ html {
   box-sizing: border-box;
   font-size: 10px;
   font-family: 'Josefin Sans', sans-serif; }
+  @media screen and (min-width: 1440px) {
+    html {
+      font-size: 6px; } }
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 8px; } }
+  @media screen and (min-width: 2000px) {
+    html {
+      font-size: 10px; } }
 
 body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px; }
@@ -24,6 +33,9 @@ body {
     body {
       display: flex;
       flex-direction: column; } }
+  @media screen and (max-width: 1440px) {
+    body {
+      grid-template-columns: 1.3fr 1fr; } }
 
 .left {
   height: 100vh;
@@ -162,3 +174,9 @@ h3 {
         right: 1.3rem; }
         .form .submit img {
           height: 20px; } }
+    @media screen and (min-width: 1440px) {
+      .form .submit {
+        right: 5rem; } }
+    @media screen and (min-width: 1920px) {
+      .form .submit {
+        right: 7.3rem; } }

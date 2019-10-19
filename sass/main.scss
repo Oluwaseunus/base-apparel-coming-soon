@@ -12,6 +12,18 @@ html {
   box-sizing: border-box;
   font-size: 10px;
   font-family: 'Josefin Sans', sans-serif;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 6px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    font-size: 8px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 10px;
+  }
 }
 
 body {
@@ -20,7 +32,7 @@ body {
   overflow: hidden;
 
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -28,6 +40,10 @@ body {
   @media screen and (max-width: 376px) {
     display: flex;
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 1440px) {
+    grid-template-columns: 1.3fr 1fr;
   }
 }
 
@@ -199,6 +215,14 @@ h3 {
       img {
         height: 20px;
       }
+    }
+
+    @media screen and (min-width: 1440px) {
+      right: 5rem;
+    }
+
+    @media screen and (min-width: 1920px) {
+      right: 7.3rem;
     }
   }
 }
