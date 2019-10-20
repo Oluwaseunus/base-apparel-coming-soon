@@ -128,8 +128,7 @@ h3 {
 .form {
   width: 90%;
   height: 10rem;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
   @media screen and (max-width: 376px) {
     .form {
       height: 5rem;
@@ -145,7 +144,59 @@ h3 {
     font-size: 3rem;
     font-family: inherit;
     padding-left: 5rem;
-    color: #ce9797; }
+    color: #ce9797;
+    transition: all 0.3s ease; }
+    .form__input + .error {
+      background: url("../images/icon-error.svg");
+      width: 6rem;
+      height: 6rem;
+      margin: auto 0;
+      position: absolute;
+      top: 1.5rem;
+      right: 24rem;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      display: none;
+      visibility: hidden; }
+      .form__input + .error ~ .error__message {
+        color: red;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 6rem;
+        left: 5rem;
+        display: none;
+        transition: all 0.3s ease; }
+        @media screen and (max-width: 376px) {
+          .form__input + .error ~ .error__message {
+            top: 3rem;
+            font-size: 1.5rem; } }
+      @media screen and (max-width: 376px) {
+        .form__input + .error {
+          width: 3rem;
+          height: 3rem;
+          top: 0.8rem;
+          right: 9rem; } }
+      @media screen and (min-width: 1920px) {
+        .form__input + .error {
+          right: 25rem; } }
+      @media screen and (min-width: 2000px) {
+        .form__input + .error {
+          right: 27rem; } }
+    .form__input:invalid {
+      border: 2px solid red; }
+      .form__input:invalid + .error {
+        display: block;
+        visibility: visible; }
+      .form__input:invalid ~ .submit {
+        transform: scale(1.05);
+        box-shadow: 3px 10px 30px 0 #aaa; }
+      .form__input:invalid ~ .error__message {
+        display: block;
+        top: 11rem; }
+        @media screen and (max-width: 376px) {
+          .form__input:invalid ~ .error__message {
+            top: 6rem; } }
     @media screen and (max-width: 376px) {
       .form__input {
         font-size: 1.5rem;
@@ -165,7 +216,11 @@ h3 {
     width: 17rem;
     height: 90%;
     border-radius: 6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
     background: linear-gradient(135deg, #f8bfbf, #ee8c8c); }
+    .form .submit:focus {
+      outline: none; }
     @media screen and (max-width: 376px) {
       .form .submit {
         width: 7rem;
